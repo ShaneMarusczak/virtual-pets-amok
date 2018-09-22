@@ -1,10 +1,12 @@
 package virtualpetsamok;
 
 public abstract class Pet {
-	int healthLevel;
-	int happinessLevel;
+	String name;
+	protected int healthLevel;
+	protected int happinessLevel;
 	
-	Pet(int healthLevel, int happinessLevel){
+	Pet(String name, int healthLevel, int happinessLevel){
+		this.name = name;
 		this.healthLevel = healthLevel;
 		this.happinessLevel = happinessLevel;
 	}

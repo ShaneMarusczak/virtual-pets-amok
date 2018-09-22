@@ -2,8 +2,8 @@ package virtualpetsamok;
 
 public abstract class Organic extends Pet {
 
-	Organic(int healthLevel, int happinessLevel) {
-		super(healthLevel, happinessLevel);
+	Organic(String name, int healthLevel, int happinessLevel) {
+		super(name, healthLevel, happinessLevel);
 	}
 
 }

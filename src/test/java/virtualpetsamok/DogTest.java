@@ -10,7 +10,7 @@ public class DogTest {
 
 	@Test
 	public void roboticDogShouldBeInstanceOfPet() {
-		RoboticDog testDog = new RoboticDog(10,10);
+		RoboticDog testDog = new RoboticDog("Bob",10,10);
 		assertTrue(testDog instanceof Robotic);
 		assertTrue(testDog instanceof Pet);
 
@@ -18,7 +18,7 @@ public class DogTest {
 
 	@Test
 	public void roboticDogShouldHaveAHealthLevel() {
-		RoboticDog testDog = new RoboticDog(10,10);
+		RoboticDog testDog = new RoboticDog("Bob",10,10);
 		int healthLevel = testDog.getHealthLevel();
 		assertThat(healthLevel, is(10));
 
@@ -26,15 +26,15 @@ public class DogTest {
 
 	@Test
 	public void organicDogShouldBeInstanceOfPet() {
-		OrganicDog testDog = new OrganicDog(10,10);
+		OrganicDog testDog = new OrganicDog("Bob",10,10);
 		assertTrue(testDog instanceof Organic);
 		assertTrue(testDog instanceof Pet);
 	}
 	
 	@Test
 	public void allDogsIncreaseHappinessWhenWalked() {
-		OrganicDog testDog1 = new OrganicDog(10,10);
-		RoboticDog testDog2 = new RoboticDog(10,10);
+		OrganicDog testDog1 = new OrganicDog("Bob",10,10);
+		RoboticDog testDog2 = new RoboticDog("Bill",10,10);
 		int testDog1BegginningHappiness = testDog1.getHappiness();
 		int testDog2BegginningHappiness = testDog2.getHappiness();
 		testDog1.goForWalk();

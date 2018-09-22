@@ -2,8 +2,8 @@ package virtualpetsamok;
 
 public class OrganicCat extends Organic {
 
-	OrganicCat(int healthLevel, int happinessLevel) {
-		super(healthLevel, happinessLevel);
+	OrganicCat(String name, int healthLevel, int happinessLevel) {
+		super(name, healthLevel, happinessLevel);
 	}
 
 }

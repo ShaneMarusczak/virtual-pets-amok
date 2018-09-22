@@ -2,8 +2,8 @@ package virtualpetsamok;
 
 public class RoboticCat extends Robotic {
 
-	RoboticCat(int healthLevel, int happinessLevel) {
-		super(healthLevel, happinessLevel);
+	RoboticCat(String name, int healthLevel, int happinessLevel) {
+		super(name, healthLevel, happinessLevel);
 	}
 
 }
