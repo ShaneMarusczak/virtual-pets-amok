@@ -2,14 +2,20 @@ package virtualpetsamok;
 
 public class OrganicDog extends Organic implements DogActions {
 
-	OrganicDog(String name, int healthLevel, int happinessLevel) {
-		super(name, healthLevel, happinessLevel);
+	int cageCleanliness;
+
+	OrganicDog(String name, int healthLevel, int happinessLevel, int hunger, int thirst) {
+		super(name, healthLevel, happinessLevel, hunger, thirst);
 	}
 
 	@Override
 	public void goForWalk() {
 		happinessLevel += 1;
 
+	}
+
+	public void cleanCage() {
+		cageCleanliness -= 1;
 	}
 
 }

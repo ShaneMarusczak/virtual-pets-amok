@@ -25,7 +25,7 @@ public class CatTest {
 
 	@Test
 	public void organicCatShouldBeInstanceOfPet() {
-		OrganicCat testCat = new OrganicCat("Bob", 10, 10);
+		OrganicCat testCat = new OrganicCat("Bob", 10, 10,0,0);
 		assertTrue(testCat instanceof Organic);
 		assertTrue(testCat instanceof Pet);
 	}

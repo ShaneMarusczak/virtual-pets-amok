@@ -14,8 +14,16 @@ public abstract class Robotic extends Pet {
 	public int getOilLevel() {
 		return oilLevel;
 	}
-	
+
 	public int getMaintenanceLevel() {
 		return maintenanceLevel;
+	}
+
+	public void giveOil() {
+		oilLevel += 1;
+	}
+
+	public void performMaintenance() {
+		maintenanceLevel += 1;
 	}
 }
