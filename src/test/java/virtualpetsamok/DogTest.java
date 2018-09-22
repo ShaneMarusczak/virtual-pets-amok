@@ -10,7 +10,7 @@ public class DogTest {
 
 	@Test
 	public void roboticDogShouldBeInstanceOfPet() {
-		RoboticDog testDog = new RoboticDog("Bob",10,10);
+		RoboticDog testDog = new RoboticDog("Bob", 10, 10, 0, 0);
 		assertTrue(testDog instanceof Robotic);
 		assertTrue(testDog instanceof Pet);
 
@@ -18,7 +18,7 @@ public class DogTest {
 
 	@Test
 	public void roboticDogShouldHaveAHealthLevel() {
-		RoboticDog testDog = new RoboticDog("Bob",10,10);
+		RoboticDog testDog = new RoboticDog("Bob", 10, 10, 0, 0);
 		int healthLevel = testDog.getHealthLevel();
 		assertThat(healthLevel, is(10));
 
@@ -26,17 +26,21 @@ public class DogTest {
 
 	@Test
 	public void organicDogShouldBeInstanceOfPet() {
-		OrganicDog testDog = new OrganicDog("Bob",10,10);
+		OrganicDog testDog = new OrganicDog("Bob", 10, 10);
 		assertTrue(testDog instanceof Organic);
 		assertTrue(testDog instanceof Pet);
 	}
-	
+
 	@Test
 	public void allDogsIncreaseHappinessWhenWalked() {
-		OrganicDog testDog1 = new OrganicDog("Bob",10,10);
-		RoboticDog testDog2 = new RoboticDog("Bill",10,10);
+		Shelter shelter = new Shelter();
+		OrganicDog testDog1 = new OrganicDog("Bob", 10, 10);
+		RoboticDog testDog2 = new RoboticDog("Bill", 10, 10, 0, 0);
 		int testDog1BegginningHappiness = testDog1.getHappiness();
 		int testDog2BegginningHappiness = testDog2.getHappiness();
+		shelter.addOrganicDog(testDog1);
+		shelter.addRoboticDog(testDog2);
+		shelter.takeAllDogsForWalk();
 		testDog1.goForWalk();
 		testDog2.goForWalk();
 		int testDog1EndingHappiness = testDog1.getHappiness();
@@ -44,4 +48,5 @@ public class DogTest {
 		assertTrue(testDog1EndingHappiness > testDog1BegginningHappiness);
 		assertTrue(testDog2EndingHappiness > testDog2BegginningHappiness);
 	}
+
 }

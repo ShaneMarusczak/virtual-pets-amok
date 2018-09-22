@@ -19,5 +19,8 @@ public abstract class Pet {
 		return happinessLevel;
 	}
 	
+	public String getName() {
+		return name;
+	}
 
 }

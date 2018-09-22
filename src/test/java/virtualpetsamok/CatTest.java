@@ -9,7 +9,7 @@ public class CatTest {
 
 	@Test
 	public void roboticCatShouldBeInstanceOfPet() {
-		RoboticCat testCat = new RoboticCat("Bob", 10, 10);
+		RoboticCat testCat = new RoboticCat("Bob", 10, 10,0,0);
 		assertTrue(testCat instanceof Robotic);
 		assertTrue(testCat instanceof Pet);
 
@@ -17,7 +17,7 @@ public class CatTest {
 
 	@Test
 	public void roboticCatShouldHaveAHealthLevel() {
-		RoboticCat testCat = new RoboticCat("Bob", 10, 10);
+		RoboticCat testCat = new RoboticCat("Bob", 10, 10,0,0);
 		int healthLevel = testCat.getHealthLevel();
 		assertThat(healthLevel, is(10));
 
