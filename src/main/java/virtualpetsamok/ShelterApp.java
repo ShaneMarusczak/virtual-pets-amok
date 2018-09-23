@@ -29,14 +29,38 @@ public class ShelterApp {
 				System.out.println(pet);
 			}
 			do {
-				System.out.println("What would you like to do?");
+				System.out.println("\nWhat would you like to do?");
 				System.out.println("Enter 1 to walk all the dogs.");
-				System.out.println("Enter 2 to clean all the dogs cages.");
+				System.out.println("Enter 2 to clean all the dog's cages.");
 				System.out.println("Enter 3 to clean the shelter's litter box.");
 				System.out.println("Enter 4 to oil all robotic pets.");
+				System.out.println("Enter 5 to perform maintenance on the robotic pets.");
+				System.out.println("Enter 6 to water all the organic pets.");
+				System.out.println("Enter 7 to feed all the organic pets.");
+				System.out.println("Enter 0 to quit.");
 				menuInput = input.nextInt();
 				input.nextLine();
-			} while (menuInput != 1 && menuInput != 2 && menuInput != 3 && menuInput != 4);
+			} while (menuInput != 1 && menuInput != 2 && menuInput != 3 && menuInput != 4 && menuInput != 5
+					&& menuInput != 6 && menuInput != 7 && menuInput != 0);
+			if (menuInput == 1) {
+				shelter.walkAllDogs();
+			} else if (menuInput == 2) {
+				shelter.cleanAllDogCages();
+			} else if (menuInput == 3) {
+				shelter.emptyLitterBox();
+			} else if (menuInput == 4) {
+				shelter.oilAllRoboticPets();
+			} else if (menuInput == 5) {
+				shelter.maintainAllRoboticPets();
+			} else if (menuInput == 6) {
+				shelter.waterAllOrganicPets();
+			} else if (menuInput == 7) {
+				shelter.feedAllOrganicPets();
+			} else if (menuInput == 0) {
+				System.out.println("Goodbye.");
+				usingSoftware = false;
+			}
+			shelter.tick();
 
 		}
 

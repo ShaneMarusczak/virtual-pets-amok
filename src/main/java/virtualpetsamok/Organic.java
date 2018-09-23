@@ -1,7 +1,10 @@
 package virtualpetsamok;
 
+import java.util.Random;
+
 public abstract class Organic extends Pet {
 
+	private Random rand = new Random();
 	private int hunger;
 	private int thirst;
 
@@ -26,11 +29,11 @@ public abstract class Organic extends Pet {
 	}
 
 	protected void increaseHunger() {
-		hunger += 1;
+		hunger += rand.nextInt(5);
 	}
 
 	protected void increaseThirst() {
-		thirst += 1;
+		thirst += rand.nextInt(5);
 	}
 
 	protected int getHunger() {
@@ -40,5 +43,7 @@ public abstract class Organic extends Pet {
 	protected int getThirst() {
 		return thirst;
 	}
+
+	
 
 }

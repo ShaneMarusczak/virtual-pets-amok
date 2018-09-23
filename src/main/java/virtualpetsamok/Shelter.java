@@ -20,7 +20,7 @@ public class Shelter {
 		}
 	}
 
-	public void takeAllDogsForWalk() {
+	public void walkAllDogs() {
 		for (Pet pet : allPets.values()) {
 			if (pet instanceof DogActions) {
 				((DogActions) pet).goForWalk();
@@ -78,12 +78,14 @@ public class Shelter {
 			if (pet instanceof Organic) {
 				((Organic) pet).increaseHunger();
 				((Organic) pet).increaseThirst();
+				((Organic) pet).decreaseHappiness();
 			}
 		}
 		for (Pet pet : allPets.values()) {
 			if (pet instanceof Robotic) {
 				((Robotic) pet).decreaseOilLevel();
 				((Robotic) pet).decreaseMaintenanceLevel();
+				((Robotic) pet).decreaseHappiness();
 			}
 		}
 		for (Pet pet : allPets.values()) {

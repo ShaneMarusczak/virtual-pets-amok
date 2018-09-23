@@ -1,7 +1,10 @@
 package virtualpetsamok;
 
+import java.util.Random;
+
 public abstract class Robotic extends Pet {
 
+	private Random rand = new Random();
 	private int oilLevel;
 	private int maintenanceLevel;
 
@@ -33,10 +36,10 @@ public abstract class Robotic extends Pet {
 	}
 
 	protected void decreaseOilLevel() {
-		oilLevel -= 1;
+		oilLevel -= rand.nextInt(5);
 	}
 
 	protected void decreaseMaintenanceLevel() {
-		maintenanceLevel -= 1;
+		maintenanceLevel -= rand.nextInt(5);
 	}
 }
