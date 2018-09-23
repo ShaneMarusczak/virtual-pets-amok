@@ -11,6 +11,12 @@ public abstract class Organic extends Pet {
 		this.thirst = thirst;
 	}
 
+	@Override
+	public String toString() {
+		return "Name: " + name + "\tHealth Level: " + healthLevel + "\tHappiness Level: " + happinessLevel + "\tHunger: " + hunger
+				+ "\tThirst: " + thirst;
+	}
+
 	protected void giveFood() {
 		hunger -= 1;
 	}

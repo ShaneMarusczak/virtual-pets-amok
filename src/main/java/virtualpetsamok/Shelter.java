@@ -8,6 +8,10 @@ public class Shelter {
 
 	HashMap<String, Pet> allPets = new HashMap<String, Pet>();
 
+	public HashMap<String, Pet> getAllPets() {
+		return allPets;
+	}
+
 	public void cleanAllDogCages() {
 		for (Pet pet : allPets.values()) {
 			if (pet instanceof OrganicDog) {

@@ -10,6 +10,11 @@ public abstract class Robotic extends Pet {
 		this.oilLevel = oilLevel;
 		this.maintenanceLevel = maintenanceLevel;
 	}
+	
+	@Override
+	public String toString() {
+		return "Name: " + name + "\tHealth Level: " + healthLevel + "\tHappiness Level: " + happinessLevel + "\tOil Level: " + oilLevel + "\tMaintenance: " + maintenanceLevel;
+	}
 
 	protected int getOilLevel() {
 		return oilLevel;
