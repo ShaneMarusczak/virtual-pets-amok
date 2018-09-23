@@ -67,7 +67,11 @@ public class Shelter {
 	}
 
 	public void cleanLitterBox() {
-		catLitterBoxLevel -= 1;
+		catLitterBoxLevel -= 4;
+	}
+
+	public int getLitterBoxLevel() {
+		return catLitterBoxLevel;
 	}
 
 }

@@ -19,4 +19,12 @@ public abstract class Organic extends Pet {
 		thirst -= 1;
 	}
 
+	public int getHunger() {
+		return hunger;
+	}
+
+	public int getThirst() {
+		return thirst;
+	}
+
 }
