@@ -22,10 +22,12 @@ public abstract class Organic extends Pet {
 
 	protected void giveFood() {
 		hunger -= 1;
+		healthLevel +=1;
 	}
 
 	protected void giveWater() {
 		thirst -= 1;
+		healthLevel +=1;
 	}
 
 	protected void increaseHunger() {

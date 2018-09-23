@@ -97,6 +97,12 @@ public class Shelter {
 			if (pet instanceof OrganicCat) {
 				catLitterBoxLevel += ((OrganicCat) pet).useLitterBox();
 			}
+
+		}
+		if (catLitterBoxLevel > 25) {
+			for (Pet pet : allPets.values()) {
+				pet.decreaseHealth();
+			}
 		}
 	}
 

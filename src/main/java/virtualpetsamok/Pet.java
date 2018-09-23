@@ -3,7 +3,7 @@ package virtualpetsamok;
 import java.util.Random;
 
 public abstract class Pet {
-	
+
 	private Random rand = new Random();
 	String name;
 	protected int healthLevel;
@@ -26,10 +26,14 @@ public abstract class Pet {
 	protected String getName() {
 		return name;
 	}
-	
+
 	public void decreaseHappiness() {
 		happinessLevel -= rand.nextInt(5);
-		
+
+	}
+
+	public void decreaseHealth() {
+		healthLevel -= rand.nextInt(5);
 	}
 
 }

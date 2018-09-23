@@ -29,10 +29,12 @@ public abstract class Robotic extends Pet {
 
 	protected void giveOil() {
 		oilLevel += 1;
+		healthLevel +=1;
 	}
 
 	protected void performMaintenance() {
 		maintenanceLevel += 1;
+		healthLevel +=1;
 	}
 
 	protected void decreaseOilLevel() {

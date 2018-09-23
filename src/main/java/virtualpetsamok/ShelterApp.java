@@ -28,6 +28,7 @@ public class ShelterApp {
 			for (Pet pet : shelter.getAllPets().values()) {
 				System.out.println(pet);
 			}
+			System.out.println("Litter box level (the litter box will overflow and make the pets health go down when it is above 25): " + shelter.getLitterBoxLevel());
 			do {
 				System.out.println("\nWhat would you like to do?");
 				System.out.println("Enter 1 to walk all the dogs.");
@@ -66,6 +67,7 @@ public class ShelterApp {
 			shelter.tick();
 
 		}
+		input.close();
 
 	}
 
