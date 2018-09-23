@@ -37,11 +37,12 @@ public class ShelterApp {
 				System.out.println("Enter 5 to perform maintenance on the robotic pets.");
 				System.out.println("Enter 6 to water all the organic pets.");
 				System.out.println("Enter 7 to feed all the organic pets.");
+				System.out.println("Enter 8 to do nothing.");
 				System.out.println("Enter 0 to quit.");
 				menuInput = input.nextInt();
 				input.nextLine();
 			} while (menuInput != 1 && menuInput != 2 && menuInput != 3 && menuInput != 4 && menuInput != 5
-					&& menuInput != 6 && menuInput != 7 && menuInput != 0);
+					&& menuInput != 6 && menuInput != 7 && menuInput != 8 && menuInput != 0);
 			if (menuInput == 1) {
 				shelter.walkAllDogs();
 			} else if (menuInput == 2) {
@@ -56,6 +57,8 @@ public class ShelterApp {
 				shelter.waterAllOrganicPets();
 			} else if (menuInput == 7) {
 				shelter.feedAllOrganicPets();
+			} else if (menuInput == 8) {
+				shelter.tick();
 			} else if (menuInput == 0) {
 				System.out.println("Goodbye.");
 				usingSoftware = false;
