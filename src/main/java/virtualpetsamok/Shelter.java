@@ -6,72 +6,92 @@ public class Shelter {
 
 	private int catLitterBoxLevel = 0;
 
-	HashMap<String, RoboticCat> allRoboticCats = new HashMap();
-	HashMap<String, RoboticDog> allRoboticDogs = new HashMap();
-	HashMap<String, OrganicCat> allOrganicCats = new HashMap();
-	HashMap<String, OrganicDog> allOrganicDogs = new HashMap();
+	HashMap<String, Pet> allPets = new HashMap<String, Pet>();
+
+	public void cleanAllDogCages() {
+		for (Pet pet : allPets.values()) {
+			if (pet instanceof OrganicDog) {
+				((OrganicDog) pet).cleanCage();
+			}
+		}
+	}
 
 	public void takeAllDogsForWalk() {
-		for (OrganicDog dog : allOrganicDogs.values()) {
-			dog.goForWalk();
-		}
-		for (RoboticDog dog : allRoboticDogs.values()) {
-			dog.goForWalk();
+		for (Pet pet : allPets.values()) {
+			if (pet instanceof DogActions) {
+				((DogActions) pet).goForWalk();
+			}
 		}
 	}
 
 	public void waterAllOrganicPets() {
-		for (OrganicDog dog : allOrganicDogs.values()) {
-			dog.giveWater();
-		}
-		for (OrganicCat cat : allOrganicCats.values()) {
-			cat.giveWater();
+		for (Pet pet : allPets.values()) {
+			if (pet instanceof Organic) {
+				((Organic) pet).giveWater();
+			}
 		}
 	}
 
 	public void feedAllOrganicPets() {
-		for (OrganicDog dog : allOrganicDogs.values()) {
-			dog.giveFood();
-		}
-		for (OrganicCat cat : allOrganicCats.values()) {
-			cat.giveFood();
+		for (Pet pet : allPets.values()) {
+			if (pet instanceof Organic) {
+				((Organic) pet).giveFood();
+			}
 		}
 	}
 
 	public void oilAllRoboticPets() {
-		for (RoboticDog dog : allRoboticDogs.values()) {
-			dog.giveOil();
-		}
-		for (RoboticCat cat : allRoboticCats.values()) {
-			cat.giveOil();
+		for (Pet pet : allPets.values()) {
+			if (pet instanceof Robotic) {
+				((Robotic) pet).giveOil();
+			}
 		}
 	}
 
 	public void maintainAllRoboticPets() {
-		for (RoboticDog dog : allRoboticDogs.values()) {
-			dog.performMaintenance();
+		for (Pet pet : allPets.values()) {
+			if (pet instanceof Robotic) {
+				((Robotic) pet).performMaintenance();
+			}
 		}
-		for (RoboticCat cat : allRoboticCats.values()) {
-			cat.performMaintenance();
-		}
 	}
 
-	public void addOrganicDog(OrganicDog dog) {
-		allOrganicDogs.put(dog.getName(), dog);
+	public void addNewPet(Pet pet) {
+		allPets.put(pet.getName(), pet);
 
 	}
 
-	public void addRoboticDog(RoboticDog dog) {
-		allRoboticDogs.put(dog.getName(), dog);
-
-	}
-
-	public void cleanLitterBox() {
-		catLitterBoxLevel -= 4;
+	public void emptyLitterBox() {
+		catLitterBoxLevel = 0;
 	}
 
 	public int getLitterBoxLevel() {
 		return catLitterBoxLevel;
+	}
+
+	public void tick() {
+		for (Pet pet : allPets.values()) {
+			if (pet instanceof Organic) {
+				((Organic) pet).increaseHunger();
+				((Organic) pet).increaseThirst();
+			}
+		}
+		for (Pet pet : allPets.values()) {
+			if (pet instanceof Robotic) {
+				((Robotic) pet).decreaseOilLevel();
+				((Robotic) pet).decreaseMaintenanceLevel();
+			}
+		}
+		for (Pet pet : allPets.values()) {
+			if (pet instanceof OrganicDog) {
+				((OrganicDog) pet).makeCageDirtier();
+			}
+		}
+		for (Pet pet : allPets.values()) {
+			if (pet instanceof OrganicCat) {
+				catLitterBoxLevel += ((OrganicCat) pet).useLitterBox();
+			}
+		}
 	}
 
 }

@@ -11,19 +11,27 @@ public abstract class Robotic extends Pet {
 		this.maintenanceLevel = maintenanceLevel;
 	}
 
-	public int getOilLevel() {
+	protected int getOilLevel() {
 		return oilLevel;
 	}
 
-	public int getMaintenanceLevel() {
+	protected int getMaintenanceLevel() {
 		return maintenanceLevel;
 	}
 
-	public void giveOil() {
+	protected void giveOil() {
 		oilLevel += 1;
 	}
 
-	public void performMaintenance() {
+	protected void performMaintenance() {
 		maintenanceLevel += 1;
+	}
+
+	protected void decreaseOilLevel() {
+		oilLevel -= 1;
+	}
+
+	protected void decreaseMaintenanceLevel() {
+		maintenanceLevel -= 1;
 	}
 }

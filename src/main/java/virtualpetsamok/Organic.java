@@ -2,8 +2,8 @@ package virtualpetsamok;
 
 public abstract class Organic extends Pet {
 
-	int hunger;
-	int thirst;
+	private int hunger;
+	private int thirst;
 
 	Organic(String name, int healthLevel, int happinessLevel, int hunger, int thirst) {
 		super(name, healthLevel, happinessLevel);
@@ -11,19 +11,27 @@ public abstract class Organic extends Pet {
 		this.thirst = thirst;
 	}
 
-	public void giveFood() {
+	protected void giveFood() {
 		hunger -= 1;
 	}
 
-	public void giveWater() {
+	protected void giveWater() {
 		thirst -= 1;
 	}
 
-	public int getHunger() {
+	protected void increaseHunger() {
+		hunger += 1;
+	}
+
+	protected void increaseThirst() {
+		thirst += 1;
+	}
+
+	protected int getHunger() {
 		return hunger;
 	}
 
-	public int getThirst() {
+	protected int getThirst() {
 		return thirst;
 	}
 

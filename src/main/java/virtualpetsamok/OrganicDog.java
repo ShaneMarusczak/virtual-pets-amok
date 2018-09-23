@@ -22,4 +22,8 @@ public class OrganicDog extends Organic implements DogActions {
 		cageCleanliness -= 1;
 	}
 
+	public void makeCageDirtier() {
+		cageCleanliness += 1;
+	}
+
 }
