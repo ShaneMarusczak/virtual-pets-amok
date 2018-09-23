@@ -26,7 +26,7 @@ public class DogTest {
 
 	@Test
 	public void organicDogShouldBeInstanceOfPet() {
-		OrganicDog testDog = new OrganicDog("Bob", 10, 10,0,0);
+		OrganicDog testDog = new OrganicDog("Bob", 10, 10, 0, 0);
 		assertTrue(testDog instanceof Organic);
 		assertTrue(testDog instanceof Pet);
 	}
@@ -34,13 +34,13 @@ public class DogTest {
 	@Test
 	public void allDogsIncreaseHappinessWhenWalked() {
 		Shelter shelter = new Shelter();
-		OrganicDog testDog1 = new OrganicDog("Bob", 10, 10,0,0);
+		OrganicDog testDog1 = new OrganicDog("Bob", 10, 10, 0, 0);
 		RoboticDog testDog2 = new RoboticDog("Bill", 10, 10, 0, 0);
 		int testDog1BegginningHappiness = testDog1.getHappiness();
 		int testDog2BegginningHappiness = testDog2.getHappiness();
-		shelter.addOrganicDog(testDog1);
-		shelter.addRoboticDog(testDog2);
-		shelter.takeAllDogsForWalk();
+		shelter.addNewPet(testDog1);
+		shelter.addNewPet(testDog2);
+		shelter.walkAllDogs();
 		int testDog1EndingHappiness = testDog1.getHappiness();
 		int testDog2EndingHappiness = testDog2.getHappiness();
 		assertTrue(testDog1EndingHappiness > testDog1BegginningHappiness);
