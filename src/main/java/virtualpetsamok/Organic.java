@@ -5,8 +5,8 @@ import java.util.Random;
 public abstract class Organic extends Pet {
 
 	private Random rand = new Random();
-	private int hunger;
-	private int thirst;
+	protected int hunger;
+	protected int thirst;
 
 	Organic(String name, int healthLevel, int happinessLevel, int hunger, int thirst) {
 		super(name, healthLevel, happinessLevel);
@@ -14,28 +14,32 @@ public abstract class Organic extends Pet {
 		this.thirst = thirst;
 	}
 
-	@Override
-	public String toString() {
-		return "Name: " + name + "\tHealth Level: " + healthLevel + "\tHappiness Level: " + happinessLevel + "\tHunger: " + hunger
-				+ "\tThirst: " + thirst;
-	}
-
 	protected void giveFood() {
-		hunger -= 1;
-		healthLevel +=1;
+		if (hunger > 5) {
+			hunger -= 5;
+			healthLevel += 1;
+		} else {
+			hunger = 0;
+			healthLevel += 1;
+		}
 	}
 
 	protected void giveWater() {
-		thirst -= 1;
-		healthLevel +=1;
+		if (thirst > 5) {
+			thirst -= 5;
+			healthLevel += 1;
+		} else {
+			thirst = 0;
+			healthLevel += 1;
+		}
 	}
 
 	protected void increaseHunger() {
-		hunger += rand.nextInt(5);
+		hunger += rand.nextInt(7);
 	}
 
 	protected void increaseThirst() {
-		thirst += rand.nextInt(5);
+		thirst += rand.nextInt(7);
 	}
 
 	protected int getHunger() {
@@ -45,7 +49,5 @@ public abstract class Organic extends Pet {
 	protected int getThirst() {
 		return thirst;
 	}
-
-	
 
 }

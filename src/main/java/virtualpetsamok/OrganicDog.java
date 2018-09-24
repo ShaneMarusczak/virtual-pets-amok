@@ -9,12 +9,18 @@ public class OrganicDog extends Organic implements DogActions {
 	}
 
 	@Override
+	public String toString() {
+		return "Organic Dog\tName: " + name + "\tHealth Level: " + healthLevel + "\tHappiness Level: " + happinessLevel
+				+ "\tHunger: " + hunger + "\tThirst: " + thirst + "\tCage Dirtiness: " + cageDirtiness;
+	}
+
+	@Override
 	public void goForWalk() {
 		happinessLevel += 1;
 
 	}
 
-	public int getCageCleanliness() {
+	public int getCageDirtiness() {
 		return cageDirtiness;
 	}
 

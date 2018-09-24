@@ -8,11 +8,12 @@ public class Shelter {
 
 	HashMap<String, Pet> allPets = new HashMap<String, Pet>();
 
-	public HashMap<String, Pet> getAllPets() {
+	HashMap<String, Pet> getAllPets() {
 		return allPets;
 	}
 
-	public void cleanAllDogCages() {
+	void cleanAllDogCages() {
+		System.out.println("\nYou clean all the cages of the organic dogs.");
 		for (Pet pet : allPets.values()) {
 			if (pet instanceof OrganicDog) {
 				((OrganicDog) pet).cleanCage();
@@ -21,6 +22,7 @@ public class Shelter {
 	}
 
 	public void walkAllDogs() {
+		System.out.println("\nYou take all dogs for a walk.");
 		for (Pet pet : allPets.values()) {
 			if (pet instanceof DogActions) {
 				((DogActions) pet).goForWalk();
@@ -29,6 +31,7 @@ public class Shelter {
 	}
 
 	public void waterAllOrganicPets() {
+		System.out.println("\nYou give bowls of water to all organic pets.");
 		for (Pet pet : allPets.values()) {
 			if (pet instanceof Organic) {
 				((Organic) pet).giveWater();
@@ -37,6 +40,7 @@ public class Shelter {
 	}
 
 	public void feedAllOrganicPets() {
+		System.out.println("\nYou give bowls of food to all organic pets.");
 		for (Pet pet : allPets.values()) {
 			if (pet instanceof Organic) {
 				((Organic) pet).giveFood();
@@ -45,6 +49,7 @@ public class Shelter {
 	}
 
 	public void oilAllRoboticPets() {
+		System.out.println("\nYou give oil to all robotic pets.");
 		for (Pet pet : allPets.values()) {
 			if (pet instanceof Robotic) {
 				((Robotic) pet).giveOil();
@@ -53,6 +58,7 @@ public class Shelter {
 	}
 
 	public void maintainAllRoboticPets() {
+		System.out.println("\nYou perform maintenance on all robotic pets.");
 		for (Pet pet : allPets.values()) {
 			if (pet instanceof Robotic) {
 				((Robotic) pet).performMaintenance();
@@ -60,12 +66,21 @@ public class Shelter {
 		}
 	}
 
+	public Pet getPet(String name) {
+		return allPets.get(name);
+	}
+
 	public void addNewPet(Pet pet) {
 		allPets.put(pet.getName(), pet);
 
 	}
 
+	public void removePet(Pet pet) {
+		allPets.remove(pet.getName(), pet);
+	}
+
 	public void emptyLitterBox() {
+		System.out.println("\nThe litter box is now empty.");
 		catLitterBoxLevel = 0;
 	}
 
@@ -99,11 +114,24 @@ public class Shelter {
 			}
 
 		}
+		for (Pet pet : allPets.values()) {
+			if (pet instanceof OrganicDog) {
+				if (((OrganicDog) pet).getCageDirtiness() > 5) {
+					System.out.println("\n" + pet.getName() + "'s cage is getting very dirty.");
+					System.out.println("Clean it soon or they will get more unahppy and possible get sick!");
+					pet.decreaseHealth();
+					pet.decreaseHappiness();
+				}
+			}
+		}
 		if (catLitterBoxLevel > 25) {
 			for (Pet pet : allPets.values()) {
-				pet.decreaseHealth();
+				if (pet instanceof Organic) {
+					System.out.println(
+							"Waring! The litter box is full! Organic pets will start losing health until it is cleaned.");
+					pet.decreaseHealth();
+				}
 			}
 		}
 	}
-
 }

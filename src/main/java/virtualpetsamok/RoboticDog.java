@@ -7,11 +7,15 @@ public class RoboticDog extends Robotic implements DogActions {
 	}
 
 	@Override
-	public void goForWalk() {
-		happinessLevel +=1;
-		
+	public String toString() {
+		return "Robotic Dog\tName: " + name + "\tHealth Level: " + healthLevel + "\tHappiness Level: " + happinessLevel
+				+ "\tOil Level: " + oilLevel + "\tMaintenance: " + maintenanceLevel;
 	}
 
-	
+	@Override
+	public void goForWalk() {
+		happinessLevel += 1;
+
+	}
 
 }

@@ -6,4 +6,10 @@ public class RoboticCat extends Robotic {
 		super(name, healthLevel, happinessLevel, oilLevel, maintenanceLevel);
 	}
 
+	@Override
+	public String toString() {
+		return "Robotic Cat\tName: " + name + "\tHealth Level: " + healthLevel + "\tHappiness Level: " + happinessLevel
+				+ "\tOil Level: " + oilLevel + "\tMaintenance: " + maintenanceLevel;
+	}
+
 }
