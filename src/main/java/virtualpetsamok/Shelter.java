@@ -118,7 +118,7 @@ public class Shelter {
 			if (pet instanceof OrganicDog) {
 				if (((OrganicDog) pet).getCageDirtiness() > 5) {
 					System.out.println("\n" + pet.getName() + "'s cage is getting very dirty.");
-					System.out.println("Clean it soon or they will get more unahppy and possible get sick!");
+					System.out.println("Clean it soon or they will get more unahppy and possibly get sick!");
 					pet.decreaseHealth();
 					pet.decreaseHappiness();
 				}
