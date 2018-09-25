@@ -1,5 +1,7 @@
 Virtual Pets AMOK! readme
 
+I started writing my program with tests to get me off the ground. I find that tests are very usefull when no code at all has been written.
+
 I included all necessary methods and variables to allow this program to create cats and dogs, both robotic and organic.
 
 I created abstract classes, Robotic and Organic, to house the differnt methods and variables that each type of pet has. This allowed me to prevent the oiling of organic pets and the feeding of robotic pets.
