@@ -47,7 +47,7 @@ public class ShelterApp {
 				System.out.println("Enter 7 to feed all the organic pets.");
 				System.out.println("Enter 8 to do nothing.");
 				System.out.println("Enter 9 to add a new pet.");
-				System.out.println("Enter 10 to remove a pet.");
+				System.out.println("Enter 10 to adopt out a pet.");
 				System.out.println("Enter 0 to quit.");
 				menuInput = input.nextInt();
 				input.nextLine();
