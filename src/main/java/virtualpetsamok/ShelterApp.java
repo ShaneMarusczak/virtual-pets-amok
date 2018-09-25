@@ -34,7 +34,7 @@ public class ShelterApp {
 				System.out.println(pet);
 			}
 			System.out.println(
-					"Litter box level (the litter box will overflow and make the pets health go down when it is above 25): "
+					"\nLitter box level (the litter box will overflow and make the pets health go down when it is above 25): "
 							+ shelter.getLitterBoxLevel());
 			do {
 				System.out.println("\nWhat would you like to do?");

@@ -27,12 +27,12 @@ public abstract class Pet {
 		return name;
 	}
 
-	public void decreaseHappiness() {
+	protected void decreaseHappiness() {
 		happinessLevel -= rand.nextInt(5);
 
 	}
 
-	public void decreaseHealth() {
+	protected void decreaseHealth() {
 		healthLevel -= rand.nextInt(5);
 	}
 

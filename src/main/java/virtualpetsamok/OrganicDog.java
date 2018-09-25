@@ -1,8 +1,11 @@
 package virtualpetsamok;
 
+import java.util.Random;
+
 public class OrganicDog extends Organic implements DogActions {
 
-	int cageDirtiness;
+	Random rand = new Random();
+	private int cageDirtiness;
 
 	OrganicDog(String name, int healthLevel, int happinessLevel, int hunger, int thirst) {
 		super(name, healthLevel, happinessLevel, hunger, thirst);
@@ -17,18 +20,30 @@ public class OrganicDog extends Organic implements DogActions {
 	@Override
 	public void goForWalk() {
 		happinessLevel += 1;
+		int a = rand.nextInt(4);
+		if (a == 2) {
+			if (cageDirtiness > 1) {
+				cageDirtiness -= 1;
+			} else {
+				cageDirtiness = 0;
+			}
+		}
 
 	}
 
-	public int getCageDirtiness() {
+	protected int getCageDirtiness() {
 		return cageDirtiness;
 	}
 
-	public void cleanCage() {
-		cageDirtiness -= 1;
+	protected void cleanCage() {
+		if (cageDirtiness > 7) {
+			cageDirtiness -= 7;
+		} else {
+			cageDirtiness = 0;
+		}
 	}
 
-	public void makeCageDirtier() {
+	protected void makeCageDirtier() {
 		cageDirtiness += 1;
 	}
 

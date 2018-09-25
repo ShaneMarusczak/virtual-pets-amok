@@ -8,11 +8,11 @@ public class Shelter {
 
 	HashMap<String, Pet> allPets = new HashMap<String, Pet>();
 
-	HashMap<String, Pet> getAllPets() {
+	public HashMap<String, Pet> getAllPets() {
 		return allPets;
 	}
 
-	void cleanAllDogCages() {
+	public void cleanAllDogCages() {
 		System.out.println("\nYou clean all the cages of the organic dogs.");
 		for (Pet pet : allPets.values()) {
 			if (pet instanceof OrganicDog) {
@@ -128,7 +128,7 @@ public class Shelter {
 			for (Pet pet : allPets.values()) {
 				if (pet instanceof Organic) {
 					System.out.println(
-							"Waring! The litter box is full! Organic pets will start losing health until it is cleaned.");
+							"Warning! The litter box is full! Organic pets will start losing health until it is cleaned.");
 					pet.decreaseHealth();
 				}
 			}

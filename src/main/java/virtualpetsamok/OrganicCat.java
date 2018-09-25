@@ -12,7 +12,7 @@ public class OrganicCat extends Organic {
 				+ "\tHunger: " + hunger + "\tThirst: " + thirst;
 	}
 
-	public int useLitterBox() {
+	protected int useLitterBox() {
 		return 1;
 	}
 
