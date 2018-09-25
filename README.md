@@ -1,6 +1,6 @@
 Virtual Pets AMOK! readme
 
-I started writing my program with tests to get me off the ground. I find that tests are very usefull when no code at all has been written.
+I started writing my program with tests to get me off the ground. I find that tests are very useful when no code at all has been written.
 
 I included all necessary methods and variables to allow this program to create cats and dogs, both robotic and organic.
 
