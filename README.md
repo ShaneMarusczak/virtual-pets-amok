@@ -1,4 +1,4 @@
-Virtual Pets AMOK! readme
+#Virtual Pets AMOK! readme
 
 I started writing my program with tests to get me off the ground. I find that tests are very useful when no code at all has been written.
 
